@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "jeffloja-dev": {
+      "hosting": {
+        "jeff-loja-ui": [
+          "jeffloja-dev"
+        ]
+      }
+    }
+  }
+}
