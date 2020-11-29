@@ -1,12 +1,12 @@
 import { StoreService } from 'src/app/core/services/store.service';
 import { Injectable } from '@angular/core';
-import { IproductPage } from '../models';
+import { IproductPage } from 'src/app/models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductPageStore extends StoreService<IproductPage> {
-  protected store = 'employees-page';
+  protected store = 'products-page';
 
   constructor() {
     super({
