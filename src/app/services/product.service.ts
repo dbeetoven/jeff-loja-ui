@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { StoreService } from 'src/app/core/services/store.service';
 import { IProduct } from '../models';
 import { ProductFirestore } from './productFirestore.service';
@@ -10,25 +11,27 @@ import { ProductPageStore } from './states/product-page.store';
   providedIn: 'root',
 })
 export class ProductService {
+  readonly collectionPath = 'products';
   productsIntoCart$: StoreService<IProduct[]>;
   constructor(
     private firestore: ProductFirestore,
+    // private firestore: AngularFirestore,
     private store: ProductPageStore
   ) {
-    // this.firestore
-    //   .collection$()
-    //   .pipe(
-    //     tap((products) => {
-    //       this.store.patch(
-    //         {
-    //           loading: false,
-    //           products,
-    //         },
-    //         `products collection subscription`
-    //       );
-    //     })
-    //   )
-    //   .subscribe();
+    this.firestore
+      .collection$()
+      .pipe(
+        tap((products) => {
+          this.store.patch(
+            {
+              loading: false,
+              products,
+            },
+            `products collection subscription`
+          );
+        })
+      )
+      .subscribe();
   }
 
   get products$(): Observable<IProduct[]> {

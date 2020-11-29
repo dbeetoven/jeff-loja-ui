@@ -10,13 +10,7 @@ import { environment } from 'src/environments/environment';
 registerLocaleData(localePt, 'es');
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-  ],
+  imports: [CommonModule, HttpClientModule, ReactiveFormsModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },
     {
@@ -25,12 +19,7 @@ registerLocaleData(localePt, 'es');
       multi: true,
     },
   ],
-  exports: [
-    CommonModule,
-    AngularFireModule,
-    AngularFirestoreModule,
-    ReactiveFormsModule,
-  ],
+  exports: [CommonModule, ReactiveFormsModule],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
