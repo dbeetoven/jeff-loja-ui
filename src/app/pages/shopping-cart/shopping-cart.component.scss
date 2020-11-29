@@ -1,7 +1,7 @@
-@import "compass/css3";
+// @import "compass/css3";
 
 @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic|Montserrat:400,700);
-@import "compass/reset";
+
 $fontSans : 'Montserrat', sans-serif;
 $fontSerif : 'Droid Serif', serif;
 
@@ -17,12 +17,12 @@ $fontSerif : 'Droid Serif', serif;
 
 
 
-body {
-  color: #333;
-  -webkit-font-smoothing: antialiased;
-  font-family: $fontSerif;
+// body {
+//   color: #333;
+//   -webkit-font-smoothing: antialiased;
+//   font-family: $fontSerif;
  
-}
+// }
  img {
    max-width:100%;
  }
