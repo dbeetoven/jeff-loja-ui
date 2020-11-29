@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { IProduct } from '../models';
-import { ProductPageStore } from './product-page.store';
+import { ProductPageStore } from './states/product-page.store';
 import { ProductFirestore } from './productFirestore.service';
 
 @Injectable({
@@ -13,20 +13,20 @@ export class ProductService {
     private firestore: ProductFirestore,
     private store: ProductPageStore
   ) {
-    this.firestore
-      .collection$()
-      .pipe(
-        tap((products) => {
-          this.store.patch(
-            {
-              loading: false,
-              products,
-            },
-            `employees collection subscription`
-          );
-        })
-      )
-      .subscribe();
+    // this.firestore
+    //   .collection$()
+    //   .pipe(
+    //     tap((products) => {
+    //       this.store.patch(
+    //         {
+    //           loading: false,
+    //           products,
+    //         },
+    //         `products collection subscription`
+    //       );
+    //     })
+    //   )
+    //   .subscribe();
   }
 
   get products$(): Observable<IProduct[]> {

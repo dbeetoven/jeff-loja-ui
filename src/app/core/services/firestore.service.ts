@@ -29,6 +29,8 @@ export abstract class FirestoreService<T> {
   }
 
   collection$(queryFn?: QueryFn): Observable<T[]> {
+    console.log(this.basePath);
+
     return this.firestore
       .collection<T>(`${this.basePath}`, queryFn)
       .valueChanges()
