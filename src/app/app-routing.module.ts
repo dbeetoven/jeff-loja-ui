@@ -12,6 +12,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/login/login.module').then((lm) => lm.LoginModule),
   },
+  {
+    path: 'shoppingCart',
+    loadChildren: () =>
+      import('./pages/shopping-cart/shopping-cart.module').then(
+        (shpm) => shpm.ShoppingCartModule
+      ),
+  },
 ];
 
 @NgModule({
