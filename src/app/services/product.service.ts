@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
+import { StoreService } from 'src/app/core/services/store.service';
 import { IProduct } from '../models';
-import { ProductPageStore } from './states/product-page.store';
 import { ProductFirestore } from './productFirestore.service';
+import { ProductPageStore } from './states/product-page.store';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
+  productsIntoCart$: StoreService<IProduct[]>;
   constructor(
     private firestore: ProductFirestore,
     private store: ProductPageStore
