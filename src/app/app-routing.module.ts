@@ -5,19 +5,12 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./pages/home/home.module').then((hm) => hm.HomeModule),
+      import('./pages/pages.module').then((pm) => pm.PagesModule),
   },
   {
     path: 'login',
     loadChildren: () =>
       import('./pages/login/login.module').then((lm) => lm.LoginModule),
-  },
-  {
-    path: 'shoppingCart',
-    loadChildren: () =>
-      import('./pages/shopping-cart/shopping-cart.module').then(
-        (shpm) => shpm.ShoppingCartModule
-      ),
   },
 ];
 
