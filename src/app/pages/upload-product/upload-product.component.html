@@ -1,0 +1,205 @@
+<div class="body-bg min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0">
+  <header class="max-w-lg mx-auto">
+    <a href="#">
+      <h1 class="text-4xl font-bold text-center">Novos Productos</h1>
+    </a>
+  </header>
+
+  <main
+    class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl"
+  >
+    <section class="mt-10">
+      <form class="flex flex-col" method="POST" action="#">
+        <div class="rounded px-3 mb-1">
+          <label
+            class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+            for="grid-last-name"
+          >
+            Título
+          </label>
+          <input
+            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+            id="grid-last-name"
+            type="text"
+            placeholder="Título"
+          />
+        </div>
+        <div class="rounded px-3 mb-1">
+          <label
+            class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+            for="grid-brand-name"
+          >
+            Nome da marca
+          </label>
+          <input
+            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+            id="grid-brand-name"
+            type="text"
+            placeholder="Nome da Marca"
+          />
+        </div>
+        <div class="rounded px-3 mb-1">
+          <label
+            class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+            for="grid-price"
+          >
+            Preço
+          </label>
+          <input
+            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+            id="grid-price"
+            type="number"
+            placeholder="Preço"
+          />
+        </div>
+        <div class="rounded px-3 mb-1">
+          <label
+            class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+            for="grid-stock"
+          >
+            Estoque
+          </label>
+          <input
+            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+            id="grid-stock"
+            type="number"
+            placeholder="Estoque"
+          />
+        </div>
+        <div class="rounded px-3 mb-1">
+          <label
+            class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+            for="grid-Discount"
+          >
+            Desconto
+          </label>
+          <input
+            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+            id="grid-discount"
+            type="number"
+            placeholder="Desconto"
+          />
+        </div>
+        <div class="rounded px-3 mb-1">
+          <label
+            class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+            for="grid-last-name"
+          >
+            Categoria
+          </label>
+          <input
+            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+            id="grid-last-name"
+            type="text"
+            placeholder="Doe"
+          />
+        </div>
+        <div class="rounded px-3 mb-1">
+          <label
+            class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+            for="grid-last-name"
+          >
+            imagens
+          </label>
+          <input
+            class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+            id="grid-last-name"
+            type="text"
+            placeholder="Doe"
+          />
+        </div>
+        <div class="flex items-center justify-between p-2 md:p-4">
+          <div class="flex">
+            <span class="mr-3">Categoria</span>
+            <div class="relative">
+              <select
+                class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"
+              >
+                <option>BEBE</option>
+                <option>Hombre</option>
+                <option>Mujer</option>
+              </select>
+              <span
+                class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <div class="flex ml-6 items-center rounded">
+            <label
+              class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"
+              for="grid-last-name"
+            >
+              descrição
+            </label>
+            <input
+              class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4"
+              id="grid-last-name"
+              type="text"
+              placeholder="Doe"
+            />
+          </div>
+        </div>
+        <div class="flex items-center justify-between p-2 md:p-4">
+          <div class="flex">
+            <span class="mr-3">Cores</span>
+            <button
+              class="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"
+            ></button>
+            <button
+              class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"
+            ></button>
+            <button
+              class="border-2 border-gray-300 ml-1 bg-red-500 rounded-full w-6 h-6 focus:outline-none"
+            ></button>
+          </div>
+          <div class="flex ml-6 items-center">
+            <span class="mr-3">Tamanhos</span>
+            <div class="relative">
+              <select
+                class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"
+              >
+                <option>SM</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+              </select>
+              <span
+                class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center"
+              >
+                <svg
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200"
+          type="submit"
+        >
+          Save
+        </button>
+      </form>
+    </section>
+  </main>
+</div>

@@ -1,4 +1,3 @@
-<app-topbar></app-topbar>
 <div class="carousel relative container mx-auto" style="max-width: 1600px">
   <div class="carousel-inner relative overflow-hidden w-full">
     <!--Slide 1-->
@@ -167,11 +166,10 @@
       </a>
     </div>
     <app-product-list
-    [products$]="products$"
-    (productAdded)="addProductToCart($event)"
-  ></app-product-list>
+      [products$]="products$"
+      (productAdded)="addProductToCart($event)"
+    ></app-product-list>
   </nav>
-
 </section>
 
 <section class="bg-white py-8">
@@ -203,4 +201,3 @@
     </p>
   </div>
 </section>
-<app-footer></app-footer>
