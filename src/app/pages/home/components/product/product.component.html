@@ -2,13 +2,13 @@
   <a href="#">
     <img
       alt="Placeholder"
-      class="block h-auto w-full hover:shadow-lg"
+      class="block w-full h-auto hover:shadow-lg"
       src="https://picsum.photos/200/150/?random"
     />
   </a>
-  <header class="flex items-center justify-between leading-tight p-2 md:p-4">
+  <header class="flex items-center justify-between p-2 leading-tight md:p-4">
     <h1 class="text-lg">
-      <a class="no-underline hover:underline text-black" id="product_title_{{product?.id}}">
+      <a class="text-black no-underline hover:underline" id="product_title_{{product?.id}}">
         {{product?.title}}
       </a>
     </h1>
@@ -18,20 +18,20 @@
     <div class="flex">
       <span class="mr-3">Color</span>
       <button
-        class="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"
+        class="w-6 h-6 border-2 border-gray-300 rounded-full focus:outline-none"
       ></button>
       <button
-        class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"
+        class="w-6 h-6 ml-1 bg-gray-700 border-2 border-gray-300 rounded-full focus:outline-none"
       ></button>
       <button
-        class="border-2 border-gray-300 ml-1 bg-red-500 rounded-full w-6 h-6 focus:outline-none"
+        class="w-6 h-6 ml-1 bg-red-500 border-2 border-gray-300 rounded-full focus:outline-none"
       ></button>
     </div>
-    <div class="flex ml-6 items-center">
+    <div class="flex items-center ml-6">
       <span class="mr-3">Size</span>
       <div class="relative">
         <select
-          class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"
+          class="py-2 pl-3 pr-10 text-base border border-gray-400 rounded appearance-none focus:outline-none focus:border-red-500"
         >
           <option>SM</option>
           <option>M</option>
@@ -39,7 +39,7 @@
           <option>XL</option>
         </select>
         <span
-          class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center"
+          class="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-center text-gray-600 pointer-events-none"
         >
           <svg
             fill="none"
@@ -57,14 +57,72 @@
     </div>
   </div>
 
-  <div class="flex item-center justify-between mt-3 leading-none p-2 md:p-4">
+  <div class="flex justify-between p-2 mt-3 leading-none item-center md:p-4">
     <p class="pt-1 text-gray-900">{{product?.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}}</p>
-    <p class="text-red-600 font-bold rounded text-sm">-{{product?.discount}}%</p>
+    <p class="text-sm font-bold text-red-600 rounded">-{{product?.discount}}%</p>
     <button
-      class="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded"
+      class="px-3 py-2 text-xs font-bold text-white uppercase bg-gray-800 rounded"
       (click)="addProductToCart(product)"
     >
       Adicionar ao carrinho
     </button>
   </div>
 </article>
+
+<!-- <div class="flex p-6">
+  <div class="relative flex-none w-44">
+    <img src="/kids-jumpsuit.jpg" alt="" class="absolute inset-0 object-cover w-full h-full rounded-lg" />
+  </div>
+  <form class="flex-auto pl-6">
+    <div class="flex flex-wrap items-baseline">
+      <h1 class="w-full flex-none font-semibold mb-2.5">
+        Kids Jumpsuit
+      </h1>
+      <div class="text-4xl font-bold leading-7 text-purple-600">
+        $39.00
+      </div>
+      <div class="ml-3 text-sm font-medium text-gray-400">
+        In stock
+      </div>
+    </div>
+    <div class="flex items-baseline my-8">
+      <div class="flex space-x-2 text-sm font-medium">
+        <label>
+          <input class="flex items-center justify-center text-white bg-purple-700 rounded-full w-9 h-9" name="size" type="radio" value="xs" checked>
+          XS
+        </label>
+        <label>
+          <input class="flex items-center justify-center border-2 border-gray-200 rounded-full w-9 h-9" name="size" type="radio" value="s">
+          S
+        </label>
+        <label>
+          <input class="flex items-center justify-center border-2 border-gray-200 rounded-full w-9 h-9" name="size" type="radio" value="m">
+          M
+        </label>
+        <label>
+          <input class="flex items-center justify-center border-2 border-gray-200 rounded-full w-9 h-9" name="size" type="radio" value="l">
+          L
+        </label>
+        <label>
+          <input class="flex items-center justify-center border-2 border-gray-200 rounded-full w-9 h-9" name="size" type="radio" value="xl">
+          XL
+        </label>
+      </div>
+      <div class="ml-3 text-sm text-gray-500 underline">Size Guide</div>
+    </div>
+    <div class="flex mb-4 space-x-3 text-sm font-semibold">
+      <div class="flex flex-auto space-x-3">
+        <button class="flex items-center justify-center w-1/2 text-white bg-purple-700 rounded-full" type="submit">Buy now</button>
+        <button class="flex items-center justify-center w-1/2 text-purple-700 rounded-full bg-purple-50" type="button">Add to bag</button>
+      </div>
+      <button class="flex items-center justify-center flex-none text-purple-700 rounded-full w-9 h-9 bg-purple-50" type="button" aria-label="like">
+        <svg width="20" height="20" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
+        </svg>
+      </button>
+    </div>
+    <p class="text-sm text-gray-500">
+      Free shipping on all continental US orders.
+    </p>
+  </form>
+</div> -->
