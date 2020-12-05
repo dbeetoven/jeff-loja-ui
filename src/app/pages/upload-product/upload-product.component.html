@@ -1,199 +1,220 @@
-<div class="min-h-screen pt-12 body-bg md:pt-20 pb-6md:px-0">
-  <header class="max-w-lg mx-auto">
-    <a href="#">
-      <h1 class="text-4xl font-bold text-center">Novos Productos</h1>
-    </a>
-  </header>
-
-  <main
-    class="max-w-lg p-8 mx-auto my-10 bg-white rounded-lg shadow-2xl md:p-12"
-  >
-    <section class="mt-10">
-      <form [formGroup]="form"  (ngSubmit)="onSubmit(form.value)" class="flex flex-col" novalidate>
-        <div class="px-3 mb-1 rounded">
-          <label
-            class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
-            for="grid-last-name"
-          >
-            Título
-          </label>
-          <input
-            class="block w-full px-4 py-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-grey-lighter"
-            id="grid-last-name"
-            type="text"
-            placeholder="Título"
-          />
-        </div>
-        <div class="px-3 mb-1 rounded">
-          <label
-            class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
-            for="grid-brand-name"
-          >
-            Nome da marca
-          </label>
-          <input
-            class="block w-full px-4 py-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-grey-lighter"
-            id="grid-brand-name"
-            type="text"
-            placeholder="Nome da Marca"
-          />
-        </div>
-        <div class="px-3 mb-1 rounded">
-          <label
-            class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
-            for="grid-price"
-          >
-            Preço
-          </label>
-          <input
-            class="block w-full px-4 py-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-grey-lighter"
-            id="grid-price"
-            type="number"
-            placeholder="Preço"
-          />
-        </div>
-        <div class="px-3 mb-1 rounded">
-          <label
-            class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
-            for="grid-stock"
-          >
-            Estoque
-          </label>
-          <input
-            class="block w-full px-4 py-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-grey-lighter"
-            id="grid-stock"
-            type="number"
-            placeholder="Estoque"
-          />
-        </div>
-        <div class="px-3 mb-1 rounded">
-          <label
-            class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
-            for="grid-Discount"
-          >
-            Desconto
-          </label>
-          <input
-            class="block w-full px-4 py-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-grey-lighter"
-            id="grid-discount"
-            type="number"
-            placeholder="Desconto"
-          />
-        </div>
-        <div class="px-3 mb-1 rounded">
-          <label
-            class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
-            for="grid-last-name"
-          >
-            Categoria
-          </label>
-          <input
-            class="block w-full px-4 py-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-grey-lighter"
-            id="grid-last-name"
-            type="text"
-            placeholder="Doe"
-          />
-        </div>
-        <div class="px-3 mb-1 rounded">
-          <label
-            class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
-            for="grid-last-name"
-          >
-            imagens
-          </label>
-          <input
-            class="block w-full px-4 py-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-grey-lighter"
-            id="grid-last-name"
-            type="text"
-            placeholder="Doe"
-          />
-        </div>
-        <div class="flex items-center justify-between p-2 md:p-4">
-          <div class="flex">
-            <span class="mr-3">Categoria</span>
-            <div class="relative">
-              <select
-                class="py-2 pl-3 pr-10 text-base border border-gray-400 rounded appearance-none focus:outline-none focus:border-red-500"
+<div class="md:container md:mx-auto">
+  <div class="flex bg-local bg-gray-100">
+    <div
+      class="max-w-6xl px-12 py-20 mx-auto mb-24 bg-gray-100 shadow-xl lg:px-24"
+    >
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSubmit(form.value)"
+        autocomplete="off"
+        novalidate
+      >
+        <div
+          class="flex flex-col px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md"
+        >
+          <div class="mb-6 -mx-3 md:flex">
+            <div class="px-3 md:w-full">
+              <label
+                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                for="title-label"
               >
-                <option>BEBE</option>
-                <option>Hombre</option>
-                <option>Mujer</option>
-              </select>
-              <span
-                class="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-center text-gray-600 pointer-events-none"
-              >
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
+                Titulo
+              </label>
+              <input
+                class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
+                id="title-label"
+                formControlName="title"
+                type="text"
+                placeholder="Short jeans"
+              />
             </div>
           </div>
-          <div class="flex items-center ml-6 rounded">
-            <label
-              class="block mb-2 text-xs font-bold tracking-wide uppercase text-grey-darker"
-              for="grid-last-name"
+          <div class="mb-6 -mx-3 md:flex">
+            <div class="px-3 mb-6 md:w-1/2 md:mb-0">
+              <label
+                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                for="brandName"
+              >
+                Nome da marca
+              </label>
+              <input
+                class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
+                id="brandName"
+                formControlName="brand_name"
+                type="text"
+                placeholder="Nike"
+              />
+            </div>
+            <div class="px-3 md:w-1/2">
+              <label
+                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                for="Model_Id"
+              >
+                Modelo
+              </label>
+              <input
+                class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
+                id="Model_Id"
+                formControlName="model_name"
+                type="text"
+                placeholder="Modelo"
+              />
+            </div>
+          </div>
+          <div class="mb-6 -mx-3 md:flex">
+            <div class="px-3 mb-6 md:w-1/2 md:mb-0">
+              <label
+                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                for="precioID"
+              >
+                Preço
+              </label>
+              <input
+                class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
+                id="precioID"
+                formControlName="price"
+                type="text"
+                placeholder="39,99"
+              />
+            </div>
+            <div class="px-3 md:w-1/2">
+              <label
+                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                for="EstoqueID"
+              >
+                Estoque
+              </label>
+              <input
+                class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
+                id="EstoqueID"
+                formControlName="stock"
+                type="text"
+                placeholder="100"
+              />
+            </div>
+          </div>
+          <div class="mb-6 -mx-3 md:flex">
+            <div class="px-3 md:w-full">
+              <label
+                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                for="application-link"
+              >
+                Descrição
+              </label>
+              <textarea
+                id="application-link"
+                class="block w-full px-4 py-3 mt-1 mb-3 text-black bg-gray-200 border border-gray-200 rounded form-textarea"
+                rows="2"
+                type="text"
+                placeholder="Descrição"
+              ></textarea>
+            </div>
+          </div>
+          <div class="-mx-3 md:flex">
+            <span
+              class="mx-3 mb-2 text-xs font-bold tracking-wide text-black uppercase"
+              >Sizes</span
             >
-              descrição
-            </label>
-            <input
-              class="block w-full px-4 py-3 border rounded appearance-none bg-grey-lighter text-grey-darker border-grey-lighter"
-              id="grid-last-name"
-              type="text"
-              placeholder="Doe"
-            />
-          </div>
-        </div>
-        <div class="flex items-center justify-between p-2 md:p-4">
-          <div class="flex">
-            <span class="mr-3">Cores</span>
-            <button
-              class="w-6 h-6 border-2 border-gray-300 rounded-full focus:outline-none"
-            ></button>
-            <button
-              class="w-6 h-6 ml-1 bg-gray-700 border-2 border-gray-300 rounded-full focus:outline-none"
-            ></button>
-            <button
-              class="w-6 h-6 ml-1 bg-red-500 border-2 border-gray-300 rounded-full focus:outline-none"
-            ></button>
-          </div>
-          <div class="flex items-center ml-6">
-            <span class="mr-3">Tamanhos</span>
-            <div class="relative">
-              <select
-                class="py-2 pl-3 pr-10 text-base border border-gray-400 rounded appearance-none focus:outline-none focus:border-red-500"
+            <div class="mt-4">
+              <label
+              id="{{i}}-size"
+                class="inline-flex items-center ml-6"
+                *ngFor="let size of sizes; let i = index"
               >
-                <option>SM</option>
-                <option>M</option>
-                <option>L</option>
-                <option>XL</option>
-              </select>
-              <span
-                class="absolute top-0 right-0 flex items-center justify-center w-10 h-full text-center text-gray-600 pointer-events-none"
+                <input
+                  type="checkbox"
+                  class="w-5 h-5 text-pink-600 form-checkbox"
+                  [value]="size.value"
+                  (change)="onCheckChange($event)"
+                /><span class="ml-2 text-gray-700">XS</span>
+              </label>
+            </div>
+          </div>
+          <div class="mt-2 mb-6 -mx-3 md:flex">
+            <div class="px-3 md:w-full">
+              <label
+                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                for="image_upload"
               >
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  class="w-4 h-4"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </span>
+                Selecione a imagem
+              </label>
+              <input
+                class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
+                id="image_upload"
+                (change)="handleFileSelect($event)"
+                type="file"
+              />
+            </div>
+          </div>
+
+          <div class="mt-2 -mx-3 md:flex">
+            <div class="px-3 md:w-full">
+              <button
+                class="px-4 py-2 font-bold text-white bg-gray-900 border-b-4 border-gray-500 rounded-full md:w-full hover:border-b-2 hover:border-gray-100"
+              >
+                Salve
+              </button>
             </div>
           </div>
         </div>
       </form>
-    </section>
-  </main>
+    </div>
+  </div>
 </div>
+
+<!-- <div class="mb-2 -mx-3 md:flex">
+            <div class="px-3 mb-6 md:w-1/2 md:mb-0">
+              <label
+                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                for="location"
+              >
+                Location*
+              </label>
+              <div>
+                <select
+                  class="w-full px-4 py-3 pr-8 mb-3 text-xs text-black bg-gray-200 border border-gray-200 rounded"
+                  id="location"
+                >
+                  <option>Abuja</option>
+                  <option>Enugu</option>
+                  <option>Lagos</option>
+                </select>
+              </div>
+            </div>
+            <div class="px-3 md:w-1/2">
+              <label
+                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                for="job-type"
+              >
+                Job Type*
+              </label>
+              <div>
+                <select
+                  class="w-full px-4 py-3 pr-8 mb-3 text-xs text-black bg-gray-200 border border-gray-200 rounded"
+                  id="job-type"
+                >
+                  <option>Full-Time</option>
+                  <option>Part-Time</option>
+                  <option>Internship</option>
+                </select>
+              </div>
+            </div>
+            <div class="px-3 md:w-1/2">
+              <label
+                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                for="department"
+              >
+                Department*
+              </label>
+              <div>
+                <select
+                  class="w-full px-4 py-3 pr-8 mb-3 text-xs text-black bg-gray-200 border border-gray-200 rounded"
+                  id="department"
+                >
+                  <option>Engineering</option>
+                  <option>Design</option>
+                  <option>Customer Support</option>
+                </select>
+              </div>
+            </div>
+          </div> -->
