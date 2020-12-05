@@ -10,6 +10,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prod": "NODE_ENV=production ng build --prod",
+    "ngh": "ng build --prod --base-href=/jeff-loja-ui/",
+    "deploy":"ng deploy --base-href=/jeff-loja-ui/",
+    "g-pages":"ng build --prod --base-href https://dbeetoven.github.io/jeff-loja-ui/ && angular-cli-ghpages --branch gh-pages",
     "hmr": "ng serve --open --configuration hmr"
   },
   "private": true,
@@ -37,6 +40,7 @@
     "@angularclass/hmr": "^3.0.0",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "angular-cli-ghpages": "^1.0.0-rc.1",
     "autoprefixer": "^10.0.2",
     "codelyzer": "^6.0.0",
     "firebase-tools": "^8.0.0",
