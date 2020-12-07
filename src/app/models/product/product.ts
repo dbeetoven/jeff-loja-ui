@@ -14,7 +14,7 @@ export interface IProduct {
   discount?: number;
   category?: Icategory;
   description?: string;
-  images?: string;
+  image?: string;
   active?: string;
   quantity?: number;
 }

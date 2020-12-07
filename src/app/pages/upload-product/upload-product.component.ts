@@ -6,6 +6,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { ProductService } from 'src/app/services/product.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-upload-product',
@@ -21,7 +23,7 @@ export class UploadProductComponent implements OnInit {
     { description: 'L', value: 'l' },
     { description: 'XL', value: 'xl' },
   ];
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private productService: ProductService) {
     this.form = this.fb.group({
       title: ['', Validators.required],
       brand_name: [''],
@@ -70,6 +72,12 @@ export class UploadProductComponent implements OnInit {
 
   onSubmit(formValue: any): void {
     console.log(formValue);
+    this.productService.create(formValue).then((product) => {
+      if (!environment.production) {
+        console.log({ product });
+      }
+      this.form.reset();
+    });
   }
   ngOnInit(): void {}
 }
