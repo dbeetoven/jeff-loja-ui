@@ -1,13 +1,13 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-export abstract class StoreService<T> {
+export class StoreService<T> {
   protected bs: BehaviorSubject<T>;
   state$: Observable<T>;
   state: T;
   previous: T | undefined;
 
-  protected abstract store: string;
+  protected store: string;
 
   constructor(initialValue: Partial<T>) {
     this.bs = new BehaviorSubject<T>(initialValue as T);
