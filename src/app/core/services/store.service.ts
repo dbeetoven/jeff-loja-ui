@@ -34,7 +34,7 @@ export class StoreService<T> {
 
   set(newValue: Partial<T>, event: string = 'Not specified') {
     this.previous = this.state;
-    const newState = Object.assign({}, newValue) as T;
+    const newState = newValue as T;
     if (!environment.production) {
       console.groupCollapsed(`[${this.store} store] [set] [event: ${event}]`);
       console.log('change', newValue);
