@@ -18,3 +18,12 @@ export interface IProduct {
   active?: string;
   quantity?: number;
 }
+
+export interface IOrder {
+  name: string;
+  email: string;
+  phone: string;
+  products: IProduct[];
+  quantity: number;
+  totalCost: number;
+}

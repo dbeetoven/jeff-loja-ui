@@ -1,178 +1,249 @@
-<div class="wrap cf">
-  <h1 class="projTitle">Responsive Table<span>-Less</span> Shopping Cart</h1>
-  <div class="heading cf">
-    <h1>My Cart</h1>
-    <a href="#" class="continue">Continue Shopping</a>
-  </div>
-  <div class="cart">
-    <ul class="cartWrap">
-      <li class="items odd">
-        <div class="infoWrap">
-          <div class="cartSection">
+<div class="container mx-auto mt-10">
+  <div class="flex my-10 shadow-md">
+    <div class="w-3/4 px-10 py-10 bg-white">
+      <div class="flex justify-between pb-8 border-b">
+        <h1 class="text-2xl font-semibold">Carrinho de Compras</h1>
+        <h2 class="text-2xl font-semibold">{{ totalItems }} itens</h2>
+      </div>
+      <div class="flex mt-10 mb-5">
+        <h3 class="w-2/5 text-xs font-semibold text-gray-600 uppercase">
+          Detalhes do produto
+        </h3>
+        <h3
+          class="w-1/5 text-xs font-semibold text-center text-gray-600 uppercase"
+        >
+          Quantidade
+        </h3>
+        <h3
+          class="w-1/5 text-xs font-semibold text-center text-gray-600 uppercase"
+        >
+          Preço
+        </h3>
+        <h3
+          class="w-1/5 text-xs font-semibold text-center text-gray-600 uppercase"
+        >
+          Total
+        </h3>
+      </div>
+      <div class="flex items-center px-6 py-5 -mx-8 hover:bg-gray-100">
+        <div class="flex w-2/5">
+          <div class="w-20">
             <img
-              src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg"
+              class="h-24"
+              src="https://drive.google.com/uc?id=18KkAVkGFvaGNqPy2DIvTqmUH_nk39o3z"
               alt=""
-              class="itemImg"
             />
-            <p class="itemNumber">#QUE-007544-002</p>
-            <h3>Item Name 1</h3>
-
-            <p><input type="text" class="qty" placeholder="3" /> x $5.00</p>
-
-            <p class="stockStatus">In Stock</p>
           </div>
-
-          <div class="prodTotal cartSection">
-            <p>$15.00</p>
-          </div>
-          <div class="cartSection removeWrap">
-            <a href="#" class="remove">x</a>
+          <div class="flex flex-col justify-between flex-grow ml-4">
+            <span class="text-sm font-bold">Iphone 6S</span>
+            <span class="text-xs text-red-500">Apple</span>
+            <a
+              href="#"
+              class="text-xs font-semibold text-gray-500 hover:text-red-500"
+              >Remover</a
+            >
           </div>
         </div>
-      </li>
-      <li class="items even">
-        <div class="infoWrap">
-          <div class="cartSection">
+        <div class="flex justify-center w-1/5">
+          <svg class="w-3 text-gray-600 fill-current" viewBox="0 0 448 512">
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+
+          <input class="w-8 mx-2 text-center border" type="text" value="1" />
+
+          <svg class="w-3 text-gray-600 fill-current" viewBox="0 0 448 512">
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </div>
+        <span class="w-1/5 text-sm font-semibold text-center">$400.00</span>
+        <span class="w-1/5 text-sm font-semibold text-center">$400.00</span>
+      </div>
+
+      <div class="flex items-center px-6 py-5 -mx-8 hover:bg-gray-100">
+        <div class="flex w-2/5">
+          <div class="w-20">
             <img
-              src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg"
+              class="h-24"
+              src="https://drive.google.com/uc?id=10ht6a9IR3K2i1j0rHofp9-Oubl1Chraw"
               alt=""
-              class="itemImg"
             />
-            <p class="itemNumber">#QUE-007544-002</p>
-            <h3>Item Name 1</h3>
-
-            <p><input type="text" class="qty" placeholder="3" /> x $5.00</p>
-
-            <p class="stockStatus">In Stock</p>
           </div>
-
-          <div class="prodTotal cartSection">
-            <p>$15.00</p>
-          </div>
-          <div class="cartSection removeWrap">
-            <a href="#" class="remove">x</a>
+          <div class="flex flex-col justify-between flex-grow ml-4">
+            <span class="text-sm font-bold">Xiaomi Mi 20000mAh</span>
+            <span class="text-xs text-red-500">Xiaomi</span>
+            <a
+              href="#"
+              class="text-xs font-semibold text-gray-500 hover:text-red-500"
+              >Remover</a
+            >
           </div>
         </div>
-      </li>
+        <div class="flex justify-center w-1/5">
+          <svg class="w-3 text-gray-600 fill-current" viewBox="0 0 448 512">
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
 
-      <li class="items odd">
-        <div class="infoWrap">
-          <div class="cartSection">
+          <input class="w-8 mx-2 text-center border" type="text" value="1" />
+
+          <svg class="w-3 text-gray-600 fill-current" viewBox="0 0 448 512">
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
+        </div>
+        <span class="w-1/5 text-sm font-semibold text-center">$40.00</span>
+        <span class="w-1/5 text-sm font-semibold text-center">$40.00</span>
+      </div>
+
+      <div class="flex items-center px-6 py-5 -mx-8 hover:bg-gray-100">
+        <div class="flex w-2/5">
+          <div class="w-20">
             <img
-              src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg"
+              class="h-24"
+              src="https://drive.google.com/uc?id=1vXhvO9HoljNolvAXLwtw_qX3WNZ0m75v"
               alt=""
-              class="itemImg"
             />
-            <p class="itemNumber">#QUE-007544-002</p>
-            <h3>Item Name 1</h3>
-
-            <p><input type="text" class="qty" placeholder="3" /> x $5.00</p>
-
-            <p class="stockStatus out">Out of Stock</p>
           </div>
-
-          <div class="prodTotal cartSection">
-            <p>$15.00</p>
-          </div>
-          <div class="cartSection removeWrap">
-            <a href="#" class="remove">x</a>
+          <div class="flex flex-col justify-between flex-grow ml-4">
+            <span class="text-sm font-bold">Airpods</span>
+            <span class="text-xs text-red-500">Apple</span>
+            <a
+              href="#"
+              class="text-xs font-semibold text-gray-500 hover:text-red-500"
+              >Remover</a
+            >
           </div>
         </div>
-      </li>
-      <li class="items even">
-        <div class="infoWrap">
-          <div class="cartSection info">
-            <img
-              src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg"
-              alt=""
-              class="itemImg"
+        <div class="flex justify-center w-1/5">
+          <svg class="w-3 text-gray-600 fill-current" viewBox="0 0 448 512">
+            <path
+              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
             />
-            <p class="itemNumber">#QUE-007544-002</p>
-            <h3>Item Name 1</h3>
+          </svg>
+          <input class="w-8 mx-2 text-center border" type="text" value="1" />
 
-            <p><input type="text" class="qty" placeholder="3" /> x $5.00</p>
-
-            <p class="stockStatus">In Stock</p>
-          </div>
-
-          <div class="prodTotal cartSection">
-            <p>$15.00</p>
-          </div>
-
-          <div class="cartSection removeWrap">
-            <a href="#" class="remove">x</a>
-          </div>
+          <svg class="w-3 text-gray-600 fill-current" viewBox="0 0 448 512">
+            <path
+              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"
+            />
+          </svg>
         </div>
-        <div class="special">
-          <div class="specialContent">
-            Free gift with purchase!, gift wrap, etc!!
-          </div>
+        <span class="w-1/5 text-sm font-semibold text-center">$150.00</span>
+        <span class="w-1/5 text-sm font-semibold text-center">$150.00</span>
+      </div>
+
+      <a routerLink="" class="flex mt-10 text-sm font-semibold text-indigo-600">
+        <svg
+          class="w-4 mr-2 text-indigo-600 fill-current"
+          viewBox="0 0 448 512"
+        >
+          <path
+            d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"
+          />
+        </svg>
+        Continue Comprando
+      </a>
+    </div>
+
+    <div id="summary" class="w-1/4 px-8 py-10">
+      <h1 class="pb-8 text-2xl font-semibold border-b">Resumo do Pedido</h1>
+      <div class="flex justify-between mt-10 mb-5">
+        <span class="text-sm font-semibold uppercase"
+          >Itens {{ totalItems }}
+        </span>
+        <span class="text-sm font-semibold">{{
+          totalToPaid.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+          })
+        }}</span>
+      </div>
+      <!-- <div>
+        <label class="inline-block mb-3 text-sm font-medium uppercase"
+          >Remessa</label
+        >
+        <select class="block w-full p-2 text-sm text-gray-600">
+          <option>Envio pelo correio</option>
+        </select>
+      </div> -->
+      <form
+        [formGroup]="form"
+        (ngSubmit)="onSubmit(form.value)"
+        autocomplete="off"
+        novalidate
+      >
+        <div class="py-2">
+          <label
+            for="name"
+            class="inline-block mb-3 text-sm font-semibold uppercase"
+            >Nome</label
+          >
+          <input
+            type="text"
+            formControlName="name"
+            placeholder="Nome"
+            class="w-full p-2 text-sm"
+          />
         </div>
-      </li>
-    </ul>
+        <div class="py-2">
+          <label
+            for="Email"
+            class="inline-block mb-3 text-sm font-semibold uppercase"
+            >Email</label
+          >
+          <input
+            type="email"
+            id="Email"
+            formControlName="email"
+            placeholder="Email"
+            class="w-full p-2 text-sm"
+          />
+        </div>
+        <div class="py-2">
+          <label
+            for="phone"
+            class="inline-block mb-3 text-sm font-semibold uppercase"
+            >Telefone</label
+          >
+          <input
+            type="tel"
+            id="phone"
+            formControlName="phone"
+            placeholder="Telefone"
+            class="w-full p-2 text-sm"
+          />
+        </div>
+        <!-- <button
+        class="px-5 py-2 text-sm text-white uppercase bg-red-500 hover:bg-red-600"
+      >
+      Aplique
+      </button> -->
+        <div class="mt-8 border-t">
+          <div
+            class="flex justify-between py-6 text-sm font-semibold uppercase"
+          >
+            <span>Custo Total</span>
+            <span>{{
+              totalToPaid.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL"
+              })
+            }}</span>
+          </div>
+          <button
+            [disabled]="!form.valid"
+            class="w-full py-3 text-sm font-semibold text-white uppercase bg-indigo-500 hover:bg-indigo-600"
+          >
+            Fazer Pedido
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
-
-  <div class="promoCode">
-    <label for="promo">Have A Promo Code?</label
-    ><input type="text" name="promo" placholder="Enter Code" />
-    <a href="#" class="btn"></a>
-  </div>
-
-  <div class="subtotal cf">
-    <ul>
-      <li class="totalRow">
-        <span class="label">Subtotal</span><span class="value">$35.00</span>
-      </li>
-
-      <li class="totalRow">
-        <span class="label">Shipping</span><span class="value">$5.00</span>
-      </li>
-
-      <li class="totalRow">
-        <span class="label">Tax</span><span class="value">$4.00</span>
-      </li>
-      <li class="totalRow final">
-        <span class="label">Total</span><span class="value">$44.00</span>
-      </li>
-      <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
-    </ul>
-  </div>
-</div>
-
-<div class="leading-loose">
-  <form class="max-w-xl m-4 p-10 bg-white rounded shadow-xl">
-    <p class="text-gray-800 font-medium">Customer information</p>
-    <div class="">
-      <label class="block text-sm text-gray-00" for="cus_name">Name</label>
-      <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Your Name" aria-label="Name">
-    </div>
-    <div class="mt-2">
-      <label class="block text-sm text-gray-600" for="cus_email">Email</label>
-      <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Your Email" aria-label="Email">
-    </div>
-    <div class="mt-2">
-      <label class=" block text-sm text-gray-600" for="cus_email">Address</label>
-      <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Street" aria-label="Email">
-    </div>
-    <div class="mt-2">
-      <label class="hidden text-sm block text-gray-600" for="cus_email">City</label>
-      <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="City" aria-label="Email">
-    </div>
-    <div class="inline-block mt-2 w-1/2 pr-1">
-      <label class="hidden block text-sm text-gray-600" for="cus_email">Country</label>
-      <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email" name="cus_email" type="text" required="" placeholder="Country" aria-label="Email">
-    </div>
-    <div class="inline-block mt-2 -mx-1 pl-1 w-1/2">
-      <label class="hidden block text-sm text-gray-600" for="cus_email">Zip</label>
-      <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_email"  name="cus_email" type="text" required="" placeholder="Zip" aria-label="Email">
-    </div>
-    <p class="mt-4 text-gray-800 font-medium">Payment information</p>
-    <div class="">
-      <label class="block text-sm text-gray-600" for="cus_name">Card</label>
-      <input class="w-full px-2 py-2 text-gray-700 bg-gray-200 rounded" id="cus_name" name="cus_name" type="text" required="" placeholder="Card Number MM/YY CVC" aria-label="Name">
-    </div>
-    <div class="mt-4">
-      <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">$3.00</button>
-    </div>
-  </form>
 </div>

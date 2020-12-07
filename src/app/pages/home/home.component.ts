@@ -13,6 +13,9 @@ export class HomeComponent implements OnInit {
     { title: 'Z900', price: 8799, discount: 10 },
     { title: 'shubert helmet', price: 999, discount: 10 },
     { title: 'sport gloves', price: 99, discount: 10 },
+    { title: 'Z900', price: 8799, discount: 10 },
+    { title: 'shubert helmet', price: 999, discount: 10 },
+    { title: 'sport gloves', price: 99, discount: 10 },
   ];
   loading$!: Observable<boolean>;
   products$!: Observable<IProduct[]>;

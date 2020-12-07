@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { StoreService } from 'src/app/core/services/store.service';
@@ -12,7 +11,7 @@ import { ProductPageStore } from './states/product-page.store';
 })
 export class ProductService {
   readonly collectionPath = 'products';
-  productsIntoCart$: StoreService<IProduct[]>;
+  productsIntoCart$: StoreService<IProduct[]> = new StoreService([]);
   constructor(
     private firestore: ProductFirestore,
     // private firestore: AngularFirestore,
