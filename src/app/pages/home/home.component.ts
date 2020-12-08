@@ -1,8 +1,8 @@
-import { LocalstorageService } from './../../core/services/localstorage.service';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IProduct } from 'src/app/models';
 import { ProductService } from 'src/app/services/product.service';
+import { LocalstorageService } from './../../core/services/localstorage.service';
 
 @Component({
   selector: 'app-home',
@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit {
     this.productService.productsIntoCart$.set(products);
     this.localStorage.setItem('_xcartItems', JSON.stringify(products));
   }
+
   ngOnInit(): void {
     this.loading$ = this.productService.loading$;
     this.noResults$ = this.productService.noResults$;
