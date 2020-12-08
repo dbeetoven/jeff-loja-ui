@@ -5,6 +5,9 @@ module.exports = {
     extend: {},
   },
   variants: {
+    textColor: ['responsive', 'hover', 'focus', 'visited'],
+    opacity: ['responsive', 'hover', 'focus', 'disabled'],
+    borderWidth: ['responsive', 'first', 'hover', 'focus'],
     margin: ['responsive', 'hover'],
     extend: {},
   },

@@ -1,3 +1,4 @@
+import { LocalstorageService } from './../../core/services/localstorage.service';
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { IProduct } from 'src/app/models';
@@ -12,7 +13,10 @@ export class HomeComponent implements OnInit {
   loading$!: Observable<boolean>;
   products$!: Observable<IProduct[]>;
   noResults$!: Observable<boolean>;
-  constructor(private productService: ProductService) {
+  constructor(
+    private productService: ProductService,
+    private localStorage: LocalstorageService
+  ) {
     const productsR = new BehaviorSubject<IProduct[]>([]);
     this.products$ = productsR.asObservable();
   }
@@ -25,10 +29,12 @@ export class HomeComponent implements OnInit {
     if (indexProduct === -1) {
       products.push({ ...product, quantity: 1 });
       this.productService.productsIntoCart$.set(products);
+      this.localStorage.setItem('_xcartItems', JSON.stringify(products));
       return;
     }
     products[indexProduct].quantity += 1;
     this.productService.productsIntoCart$.set(products);
+    this.localStorage.setItem('_xcartItems', JSON.stringify(products));
   }
   ngOnInit(): void {
     this.loading$ = this.productService.loading$;
