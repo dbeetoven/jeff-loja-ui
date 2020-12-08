@@ -1,5 +1,5 @@
 export interface ISize {
-  id: string;
+  id?: string;
   description: string;
   abvr: string;
 }

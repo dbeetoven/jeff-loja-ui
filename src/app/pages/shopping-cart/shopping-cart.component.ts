@@ -1,5 +1,7 @@
+import { LocalstorageService } from './../../core/services/localstorage.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 import { IOrder, IProduct } from 'src/app/models';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -12,7 +14,12 @@ export class ShoppingCartComponent implements OnInit {
   totalItems: number;
   totalToPaid: number;
   form: FormGroup;
-  constructor(public productService: ProductService, private fb: FormBuilder) {
+  constructor(
+    public productService: ProductService,
+    private fb: FormBuilder,
+    private domSanitizer: DomSanitizer,
+    private localStorage: LocalstorageService
+  ) {
     this.form = this.fb.group({
       name: ['', Validators.required],
       email: ['', Validators.required],
@@ -34,10 +41,12 @@ export class ShoppingCartComponent implements OnInit {
     if (indexProduct === -1) {
       products.push({ ...product, quantity: 1 });
       this.productService.productsIntoCart$.set(products);
+      this.localStorage.setItem('_xcartItems', JSON.stringify(products));
       return;
     }
     products[indexProduct].quantity += 1;
     this.productService.productsIntoCart$.set(products);
+    this.localStorage.setItem('_xcartItems', JSON.stringify(products));
   }
 
   removeProductToCart(product: IProduct): void {
@@ -56,6 +65,7 @@ export class ShoppingCartComponent implements OnInit {
       return;
     }
     this.productService.productsIntoCart$.set(products);
+    this.localStorage.setItem('_xcartItems', JSON.stringify(products));
   }
 
   onSubmit(formValue: any): void {
@@ -64,7 +74,11 @@ export class ShoppingCartComponent implements OnInit {
     order.totalCost = this.totalToPaid;
     order.quantity = this.totalItems;
   }
-
+  toSafePathImage(imgBase64Url: string) {
+    return this.domSanitizer.bypassSecurityTrustUrl(
+      `data:image/png;base64, ${imgBase64Url}`
+    );
+  }
   ngOnInit(): void {
     this.productService.productsIntoCart$.state$.subscribe((products) => {
       this.totalItems = products.reduce(

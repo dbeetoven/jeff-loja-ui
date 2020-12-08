@@ -1,3 +1,4 @@
+import { LocalstorageService } from './../core/services/localstorage.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
@@ -11,9 +12,14 @@ import { ProductPageStore } from './states/product-page.store';
 })
 export class ProductService {
   readonly collectionPath = 'products';
-  productsIntoCart$: StoreService<IProduct[]> = new StoreService([]);
+  readonly itemsIncart: IProduct[] =
+    JSON.parse(this.localStorage.getItem('_xcartItems')) || [];
+  productsIntoCart$: StoreService<IProduct[]> = new StoreService(
+    this.itemsIncart
+  );
   constructor(
     private firestore: ProductFirestore,
+    private localStorage: LocalstorageService,
     // private firestore: AngularFirestore,
     private store: ProductPageStore
   ) {

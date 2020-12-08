@@ -37,7 +37,7 @@
           <div class="w-20">
             <img
               class="h-24"
-              src="https://drive.google.com/uc?id=10ht6a9IR3K2i1j0rHofp9-Oubl1Chraw"
+              [src]="toSafePathImage(product?.image)"
               alt=""
             />
           </div>
@@ -180,7 +180,7 @@
           </div>
           <button
             [disabled]="!form.valid"
-            class="w-full py-3 text-sm font-semibold text-white uppercase bg-indigo-500 hover:bg-indigo-600"
+            class="w-full py-3 text-sm font-semibold text-white uppercase bg-indigo-500 disabled:opacity-75 hover:bg-indigo-600"
           >
             Fazer Pedido
           </button>
