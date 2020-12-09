@@ -1,169 +1,171 @@
-<ng-container *ngIf="!loading; else loading">
-<div class="md:container md:mx-auto">
-  <div class="flex bg-local bg-gray-100">
-    <div
-      class="max-w-6xl px-12 py-20 mx-auto mb-24 bg-gray-100 shadow-xl lg:px-24"
-    >
-      <form
-        [formGroup]="form"
-        (ngSubmit)="onSubmit(form.value)"
-        autocomplete="off"
-        novalidate
+<!-- <ng-container *ngIf="!loading; else loading"> -->
+  <div class="md:container md:mx-auto">
+    <div class="flex bg-local bg-gray-100">
+      <div
+        class="max-w-6xl px-12 py-20 mx-auto mb-24 bg-gray-100 shadow-xl lg:px-24"
       >
-        <div
-          class="flex flex-col px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md"
+        <form
+          [formGroup]="form"
+          (ngSubmit)="onSubmit(form.value)"
+          autocomplete="off"
+          novalidate
         >
-          <div class="mb-1 -mx-3 md:flex">
-            <div class="px-3 md:w-full">
-              <label
-                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
-                for="title-label"
-              >
-                Titulo
-              </label>
-              <input
-                class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
-                id="title-label"
-                formControlName="title"
-                type="text"
-                placeholder="Short jeans"
-              />
-            </div>
-          </div>
-          <div class="mb-1 -mx-3 md:flex">
-            <div class="px-3 md:w-full">
-              <label
-                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
-                for="description_Id"
-              >
-                Descrição
-              </label>
-              <input
-                id="description_Id"
-                class="block w-full px-4 py-3 mt-1 mb-3 text-black bg-gray-200 border border-gray-200 rounded form-textarea"
-                type="text"
-                placeholder="Descrição"
-              />
-            </div>
-          </div>
-          <div class="mb-2 -mx-3 md:flex">
-            <div class="px-3 mb-6 md:w-1/2 md:mb-0">
-              <label
-                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
-                for="brandName"
-              >
-                Nome da marca
-              </label>
-              <input
-                class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
-                id="brandName"
-                formControlName="brand_name"
-                type="text"
-                placeholder="Nike"
-              />
-            </div>
-            <div class="px-3 md:w-1/2">
-              <label
-                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
-                for="Model_Id"
-              >
-                Modelo
-              </label>
-              <input
-                class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
-                id="Model_Id"
-                formControlName="model_name"
-                type="text"
-                placeholder="Modelo"
-              />
-            </div>
-          </div>
-          <div class="mb-6 -mx-3 md:flex">
-            <div class="px-3 mb-6 md:w-1/2 md:mb-0">
-              <label
-                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
-                for="precioID"
-              >
-                Preço
-              </label>
-              <input
-                class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
-                id="precioID"
-                formControlName="price"
-                type="text"
-                placeholder="39,99"
-              />
-            </div>
-            <div class="px-3 md:w-1/2">
-              <label
-                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
-                for="EstoqueID"
-              >
-                Estoque
-              </label>
-              <input
-                class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
-                id="EstoqueID"
-                formControlName="stock"
-                type="text"
-                placeholder="100"
-              />
-            </div>
-          </div>
-
-          <div class="-mx-3 md:flex">
-            <span
-              class="mx-3 mb-2 text-xs font-bold tracking-wide text-black uppercase"
-              >Sizes</span
-            >
-            <div class="mt-4">
-              <label
-              id="{{i}}-size"
-                class="inline-flex items-center ml-6"
-                *ngFor="let size of sizes; let i = index"
-              >
+          <div
+            class="flex flex-col px-8 pt-6 pb-8 mb-4 bg-white rounded shadow-md"
+          >
+            <div class="mb-1 -mx-3 md:flex">
+              <div class="px-3 md:w-full">
+                <label
+                  class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                  for="title-label"
+                >
+                  Titulo
+                </label>
                 <input
-                  type="checkbox"
-                  class="w-5 h-5 text-pink-600 form-checkbox"
-                  [value]="size.value"
-                  (change)="onCheckChange($event)"
-                /><span class="ml-2 text-gray-700">{{size?.description}}</span>
-              </label>
+                  class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
+                  id="title-label"
+                  formControlName="title"
+                  type="text"
+                  placeholder="Short jeans"
+                />
+              </div>
             </div>
-          </div>
-          <div class="mt-2 mb-6 -mx-3 md:flex">
-            <div class="px-3 md:w-full">
-              <label
-                class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
-                for="image_upload"
-              >
-                Selecione a imagem
-              </label>
-              <input
-                class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
-                id="image_upload"
-                (change)="handleFileSelect($event)"
-                type="file"
-              />
+            <div class="mb-1 -mx-3 md:flex">
+              <div class="px-3 md:w-full">
+                <label
+                  class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                  for="description_Id"
+                >
+                  Descrição
+                </label>
+                <input
+                  id="description_Id"
+                  class="block w-full px-4 py-3 mt-1 mb-3 text-black bg-gray-200 border border-gray-200 rounded form-textarea"
+                  type="text"
+                  placeholder="Descrição"
+                />
+              </div>
             </div>
-          </div>
+            <div class="mb-2 -mx-3 md:flex">
+              <div class="px-3 mb-6 md:w-1/2 md:mb-0">
+                <label
+                  class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                  for="brandName"
+                >
+                  Nome da marca
+                </label>
+                <input
+                  class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
+                  id="brandName"
+                  formControlName="brand_name"
+                  type="text"
+                  placeholder="Nike"
+                />
+              </div>
+              <div class="px-3 md:w-1/2">
+                <label
+                  class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                  for="Model_Id"
+                >
+                  Modelo
+                </label>
+                <input
+                  class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
+                  id="Model_Id"
+                  formControlName="model_name"
+                  type="text"
+                  placeholder="Modelo"
+                />
+              </div>
+            </div>
+            <div class="mb-6 -mx-3 md:flex">
+              <div class="px-3 mb-6 md:w-1/2 md:mb-0">
+                <label
+                  class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                  for="precioID"
+                >
+                  Preço
+                </label>
+                <input
+                  class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
+                  id="precioID"
+                  formControlName="price"
+                  type="text"
+                  placeholder="39,99"
+                />
+              </div>
+              <div class="px-3 md:w-1/2">
+                <label
+                  class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                  for="EstoqueID"
+                >
+                  Estoque
+                </label>
+                <input
+                  class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
+                  id="EstoqueID"
+                  formControlName="stock"
+                  type="text"
+                  placeholder="100"
+                />
+              </div>
+            </div>
 
-          <div class="mt-2 -mx-3 md:flex">
-            <div class="px-3 md:w-full">
-              <button
-              [disabled]="!form.valid"
-                class="px-4 py-2 font-bold text-white bg-gray-900 border-b-4 border-gray-500 rounded-full disabled:opacity-75 md:w-full hover:border-b-2 hover:border-gray-100"
+            <div class="-mx-3 md:flex">
+              <span
+                class="mx-3 mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                >Sizes</span
               >
-                Salve
-              </button>
+              <div class="mt-4">
+                <label
+                  id="{{ i }}-size"
+                  class="inline-flex items-center ml-6"
+                  *ngFor="let size of sizes; let i = index"
+                >
+                  <input
+                    type="checkbox"
+                    class="w-5 h-5 text-pink-600 form-checkbox"
+                    [value]="size.value"
+                    (change)="onCheckChange($event)"
+                  /><span class="ml-2 text-gray-700">{{
+                    size?.description
+                  }}</span>
+                </label>
+              </div>
+            </div>
+            <div class="mt-2 mb-6 -mx-3 md:flex">
+              <div class="px-3 md:w-full">
+                <label
+                  class="mb-2 text-xs font-bold tracking-wide text-black uppercase"
+                  for="image_upload"
+                >
+                  Selecione a imagem
+                </label>
+                <input
+                  class="w-full px-4 py-3 mb-3 text-black bg-gray-200 border border-gray-200 rounded"
+                  id="image_upload"
+                  (change)="handleFileSelect($event)"
+                  type="file"
+                />
+              </div>
+            </div>
+
+            <div class="mt-2 -mx-3 md:flex">
+              <div class="px-3 md:w-full">
+                <button
+                  [disabled]="!form.valid"
+                  class="px-4 py-2 font-bold text-white bg-gray-900 border-b-4 border-gray-500 rounded-full disabled:opacity-75 md:w-full hover:border-b-2 hover:border-gray-100"
+                >
+                  Salve
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
-</div>
-</ng-container>
+<!-- </ng-container>
 <ng-template #loading>
   <app-loading></app-loading>
-  </ng-template>
+</ng-template> -->
