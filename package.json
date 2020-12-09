@@ -13,7 +13,8 @@
     "ngh": "ng build --prod --base-href=/jeff-loja-ui/",
     "deploy":"ng deploy --base-href=/jeff-loja-ui/",
     "g-pages":"ng build --prod --base-href https://dbeetoven.github.io/jeff-loja-ui/ && angular-cli-ghpages --branch gh-pages",
-    "hmr": "ng serve --open --configuration hmr"
+    "hmr": "ng serve --open --configuration hmr",
+    "firebase-deploy":"firebase deploy"
   },
   "private": true,
   "dependencies": {
