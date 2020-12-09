@@ -1,13 +1,13 @@
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
-export abstract class StoreService<T> {
+export class StoreService<T> {
   protected bs: BehaviorSubject<T>;
   state$: Observable<T>;
   state: T;
   previous: T | undefined;
 
-  protected abstract store: string;
+  protected store: string;
 
   constructor(initialValue: Partial<T>) {
     this.bs = new BehaviorSubject<T>(initialValue as T);
@@ -34,7 +34,7 @@ export abstract class StoreService<T> {
 
   set(newValue: Partial<T>, event: string = 'Not specified') {
     this.previous = this.state;
-    const newState = Object.assign({}, newValue) as T;
+    const newState = newValue as T;
     if (!environment.production) {
       console.groupCollapsed(`[${this.store} store] [set] [event: ${event}]`);
       console.log('change', newValue);

@@ -2,7 +2,7 @@ import { CommonModule, registerLocaleData } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import localePt from '@angular/common/locales/pt';
 import { LOCALE_ID, NgModule, Optional, SkipSelf } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InterceptorService } from './services/interceptor.service';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -14,6 +14,7 @@ registerLocaleData(localePt, 'es');
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
   ],
@@ -27,9 +28,9 @@ registerLocaleData(localePt, 'es');
   ],
   exports: [
     CommonModule,
-    AngularFireModule,
-    AngularFirestoreModule,
     ReactiveFormsModule,
+    FormsModule,
+    AngularFirestoreModule,
   ],
 })
 export class CoreModule {

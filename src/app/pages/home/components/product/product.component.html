@@ -1,70 +1,84 @@
-<article class="overflow-hidden rounded-lg shadow-lg">
-  <a href="#">
+<div class="p-10 bg-white rounded-lg shadow-2xl card">
+  <div class="prod-title">
+    <p class="text-2xl font-bold text-gray-900 uppercase">
+      {{ product?.title }}
+    </p>
+    <p class="text-sm text-gray-400 uppercase">
+      {{ product?.description }}
+    </p>
+  </div>
+  <div class="prod-img">
+    <!-- <img
+      src="https://unsplash.com/photos/IJjfPInzmdk/download?force=true&w=1920"
+      class="object-cover object-center w-full"
+    /> -->
     <img
-      alt="Placeholder"
-      class="block h-auto w-full hover:shadow-lg"
-      src="https://picsum.photos/200/150/?random"
-    />
-  </a>
-  <header class="flex items-center justify-between leading-tight p-2 md:p-4">
-    <h1 class="text-lg">
-      <a class="no-underline hover:underline text-black" id="product_title_{{product?.id}}">
-        {{product?.title}}
-      </a>
-    </h1>
-  </header>
-
-  <div class="flex items-center justify-between p-2 md:p-4">
-    <div class="flex">
-      <span class="mr-3">Color</span>
-      <button
-        class="border-2 border-gray-300 rounded-full w-6 h-6 focus:outline-none"
-      ></button>
-      <button
-        class="border-2 border-gray-300 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"
-      ></button>
-      <button
-        class="border-2 border-gray-300 ml-1 bg-red-500 rounded-full w-6 h-6 focus:outline-none"
-      ></button>
-    </div>
-    <div class="flex ml-6 items-center">
-      <span class="mr-3">Size</span>
-      <div class="relative">
-        <select
-          class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"
-        >
-          <option>SM</option>
-          <option>M</option>
-          <option>L</option>
-          <option>XL</option>
-        </select>
-        <span
-          class="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center"
-        >
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4"
-            viewBox="0 0 24 24"
+    [src]="toSafePathImage(product?.image)"
+    class="object-cover object-center w-full"
+  />
+  </div>
+  <div class="grid gap-10 prod-info">
+    <!-- <div>
+      <ul class="flex flex-row items-center justify-center">
+        <li class="mr-4 last:mr-0">
+          <span
+            class="block p-1 transition duration-300 ease-in border-2 border-white rounded-full hover:border-gray-500"
           >
-            <path d="M6 9l6 6 6-6"></path>
-          </svg>
-        </span>
-      </div>
+            <a
+              class="block text-center text-white bg-red-900 rounded-full w-7 h-7"
+              >S</a
+            >
+          </span>
+        </li>
+        <li class="mr-4 last:mr-0">
+          <span
+            class="block p-1 transition duration-300 ease-in border-2 border-white rounded-full hover:border-gray-500"
+          >
+            <a
+              class="block text-center text-white bg-red-700 rounded-full w-7 h-7"
+              >M</a
+            >
+          </span>
+        </li>
+        <li class="mr-4 last:mr-0">
+          <span
+            class="block p-1 transition duration-300 ease-in border-2 border-white rounded-full hover:border-gray-500"
+          >
+            <a
+              class="block text-center text-white bg-red-600 rounded-full w-7 h-7"
+              >L</a
+            >
+          </span>
+        </li>
+        <li class="mr-4 last:mr-0">
+          <span
+            class="block p-1 transition duration-300 ease-in border-2 border-white rounded-full hover:border-gray-500"
+          >
+            <a
+              class="block text-center text-white bg-red-500 rounded-full w-7 h-7"
+              >XL</a
+            >
+          </span>
+        </li>
+      </ul>
+    </div> -->
+    <div
+      class="flex flex-col items-center justify-between mt-3 text-gray-900 md:flex-row"
+    >
+      <p class="font-bold text-purple-600">
+        {{
+          product?.price.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+          })
+        }}
+      </p>
+      <button
+        class="px-4 py-2 font-bold uppercase transition duration-200 ease-in border-2 border-gray-700 rounded-full hover:bg-purple-700 hover:text-white focus:outline-none"
+        (click)="addProductToCart(product)"
+      >
+        Adicionar ao <i class="fa">&#xf07a;</i>
+      </button>
     </div>
   </div>
-
-  <div class="flex item-center justify-between mt-3 leading-none p-2 md:p-4">
-    <p class="pt-1 text-gray-900">{{product?.price.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}}</p>
-    <p class="text-red-600 font-bold rounded text-sm">-{{product?.discount}}%</p>
-    <button
-      class="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded"
-      (click)="addProductToCart(product)"
-    >
-      Adicionar ao carrinho
-    </button>
-  </div>
-</article>
+</div>

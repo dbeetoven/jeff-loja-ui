@@ -53,14 +53,22 @@
               "buildOptimizer": true,
               "budgets": [
                 {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                    "type": "initial",
+                    "maximumWarning": "5mb",
+                    "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "10kb",
+                  "maximumError": "30kb"
+                }
+              ]
+            },
+            "hmr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.hmr.ts"
                 }
               ]
             }
@@ -75,6 +83,10 @@
           "configurations": {
             "production": {
               "browserTarget": "jeff-loja-ui:build:production"
+            },
+            "hmr": {
+              "hmr": true,
+              "browserTarget": "jeff-loja-ui:build:hmr"
             }
           }
         },
@@ -128,7 +140,7 @@
           }
         },
         "deploy": {
-          "builder": "@angular/fire:deploy",
+          "builder": "angular-cli-ghpages:deploy",
           "options": {}
         }
       }

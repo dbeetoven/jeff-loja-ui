@@ -1,7 +1,21 @@
-@import 'tailwindcss/base';
+@import "tailwindcss/base";
 
-@import 'tailwindcss/components';
+@import "tailwindcss/components";
 
-@import 'tailwindcss/utilities';
- 
-@import 'global.scss';
+@import "tailwindcss/utilities";
+
+@import "global.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+body{
+  // background-color: #EAECED
+  background-color: #FFFCFC 
+}
+.rotate-45 {
+  transform: rotate(45deg);
+}
+.-rotate-45 {
+  transform: rotate(-45deg);
+}

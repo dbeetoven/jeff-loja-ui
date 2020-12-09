@@ -1,6 +1,7 @@
+import { LocalstorageService } from './../core/services/localstorage.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { StoreService } from 'src/app/core/services/store.service';
 import { IProduct } from '../models';
 import { ProductFirestore } from './productFirestore.service';
@@ -10,25 +11,37 @@ import { ProductPageStore } from './states/product-page.store';
   providedIn: 'root',
 })
 export class ProductService {
-  productsIntoCart$: StoreService<IProduct[]>;
+  readonly collectionPath = 'products';
+  readonly itemsIncart: IProduct[] =
+    JSON.parse(this.localStorage.getItem('_xcartItems')) || [];
+  productsIntoCart$: StoreService<IProduct[]> = new StoreService(
+    this.itemsIncart
+  );
   constructor(
     private firestore: ProductFirestore,
+    private localStorage: LocalstorageService,
+    // private firestore: AngularFirestore,
     private store: ProductPageStore
   ) {
-    // this.firestore
-    //   .collection$()
-    //   .pipe(
-    //     tap((products) => {
-    //       this.store.patch(
-    //         {
-    //           loading: false,
-    //           products,
-    //         },
-    //         `products collection subscription`
-    //       );
-    //     })
-    //   )
-    //   .subscribe();
+    this.firestore
+      .collection$()
+      .pipe(
+        tap((products) => {
+          this.store.patch(
+            {
+              loading: false,
+              products,
+            },
+            `products collection subscription`
+          );
+        })
+      )
+      .subscribe();
+  }
+
+  cleanCardProduct(): void {
+    this.productsIntoCart$.set([]);
+    this.localStorage.setItem('_xcartItems', JSON.stringify([]));
   }
 
   get products$(): Observable<IProduct[]> {
