@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { of } from 'rxjs';
+import { Icategory, IOrder, ISize } from 'src/app/models';
 import { environment } from 'src/environments/environment';
-import { Icategory, ISize } from '../models';
 
 @Injectable({
   providedIn: 'root',
@@ -29,5 +28,8 @@ export class CommonService {
           console.log(`Category added :${res}`);
         }
       });
+  }
+  public addOrderTransaction(order: IOrder): Promise<any> {
+    return this.firestore.collection('orders').add(order);
   }
 }

@@ -39,6 +39,11 @@ export class ProductService {
       .subscribe();
   }
 
+  cleanCardProduct(): void {
+    this.productsIntoCart$.set([]);
+    this.localStorage.setItem('_xcartItems', JSON.stringify([]));
+  }
+
   get products$(): Observable<IProduct[]> {
     return this.store.state$.pipe(
       map((state) => (state.loading ? [] : state.products))

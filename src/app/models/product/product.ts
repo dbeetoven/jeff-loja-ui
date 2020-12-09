@@ -23,6 +23,8 @@ export interface IOrder {
   name: string;
   email: string;
   phone: string;
+  saler: string;
+  body: string;
   products: IProduct[];
   quantity: number;
   totalCost: number;
