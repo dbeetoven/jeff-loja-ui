@@ -132,9 +132,16 @@
         Catálogo da loja
       </a>
     </div>
-    <app-product-list
+    <ng-container *ngIf="!(loading$ |async); else loading">
+      <app-product-list
       [products$]="products$"
       (productAdded)="addProductToCart($event)"
     ></app-product-list>
+    </ng-container>
+
   </nav>
 </section>
+
+<ng-template #loading>
+<app-loading></app-loading>
+</ng-template>

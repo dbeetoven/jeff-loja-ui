@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UploadProductComponent implements OnInit {
   form: FormGroup;
+  loading = false;
   sizes = [
     { description: 'XS', value: 'xs' },
     { description: 'S', value: 's' },
@@ -71,11 +72,12 @@ export class UploadProductComponent implements OnInit {
   }
 
   onSubmit(formValue: any): void {
-    console.log(formValue);
+    this.loading = true;
     this.productService.create(formValue).then((product) => {
       if (!environment.production) {
         console.log({ product });
       }
+      this.loading = false;
       this.form.reset();
     });
   }
