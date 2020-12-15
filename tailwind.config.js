@@ -1,7 +1,7 @@
 const { Content } = require("@angular/compiler/src/render3/r3_ast");
 
 module.exports = {
-  purge: ["./src/**/*.{ts,tsx}", "./src/**/*.js", "./src/**/*.html"],
+  // purge: ['./src/ **/*.html', './src/** /*.ts'],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},

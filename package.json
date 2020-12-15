@@ -5,14 +5,14 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:prod": "NODE_ENV=production ng build --prod",
-    "ngh": "ng build --prod --base-href=/jeff-loja-ui/",
+    "build-prod": "NODE_ENV=production ng build --prod",
+    "ngh": "NODE_ENV=production ng build --prod --base-href=/jeff-loja-ui/",
     "deploy":"ng deploy --base-href=/jeff-loja-ui/",
-    "g-pages":"ng build --prod --base-href https://dbeetoven.github.io/jeff-loja-ui/ && angular-cli-ghpages --branch gh-pages",
+    "g-pages":"NODE_ENV=production ng build --prod --base-href https://dbeetoven.github.io/jeff-loja-ui/ && angular-cli-ghpages --branch gh-pages",
     "hmr": "ng serve --open --configuration hmr",
     "firebase-deploy":"firebase deploy"
   },
