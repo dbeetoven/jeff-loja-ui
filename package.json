@@ -57,7 +57,7 @@
     "ngx-build-plus": "^10.1.1",
     "ngx-tailwind": "^1.0.0",
     "open": "^7.0.3",
-    "postcss": "^8.1.7",
+    "postcss": "^8.2.10",
     "postcss-import": "^13.0.0",
     "postcss-loader": "^4.0.4",
     "postcss-scss": "^3.0.4",
